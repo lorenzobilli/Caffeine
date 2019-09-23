@@ -30,7 +30,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace Espresso.Shared
+namespace Espresso
 {
 	/// <summary>
 	/// Wraps all code used to keep the computer waken up.

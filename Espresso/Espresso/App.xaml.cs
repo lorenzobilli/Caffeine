@@ -22,14 +22,13 @@
  *	IN THE SOFTWARE.
  *	
  *	
- *	Espresso/Espresso.WPF/App.xaml.cs
+ *	Espresso/Espresso/App.xaml.cs
  *	
  */
 
-using Espresso.Shared;
 using System.Windows;
 
-namespace Espresso.WPF
+namespace Espresso
 {
 	/// <summary>
 	/// Interaction logic for App.xaml

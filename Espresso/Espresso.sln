@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Espresso.Shared", "Espresso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Espresso.WPF", "Espresso.WPF\Espresso.WPF.csproj", "{140DE9ED-23A4-4E17-9011-BD97A3953FFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Espresso", "Espresso\Espresso.csproj", "{276192C5-017A-456A-9C76-CD20EE8ADCDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{140DE9ED-23A4-4E17-9011-BD97A3953FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{140DE9ED-23A4-4E17-9011-BD97A3953FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{140DE9ED-23A4-4E17-9011-BD97A3953FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{276192C5-017A-456A-9C76-CD20EE8ADCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276192C5-017A-456A-9C76-CD20EE8ADCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276192C5-017A-456A-9C76-CD20EE8ADCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276192C5-017A-456A-9C76-CD20EE8ADCDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

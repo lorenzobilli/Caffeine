@@ -25,12 +25,13 @@
  *	Espresso/Espresso.WPF/MainWindow.xaml.cs
  *	
  */
- 
+
 using System.Drawing;
+using System.IO;
 using System.Windows;
 using System.Windows.Forms;
 
-namespace Espresso.WPF
+namespace Espresso
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
@@ -40,16 +41,12 @@ namespace Espresso.WPF
 		/// <summary>
 		/// Icon used by the system tray icon to tell the user that the application is in the disabled state.
 		/// </summary>
-		private readonly Icon _disabledIcon = new Icon(
-			Properties.Resources.disabled, new System.Drawing.Size(256, 256)
-		);
+		private Icon _disabledIcon;
 
 		/// <summary>
 		/// Icon used by the system tray icon to tell the user that the application is in the enabled state.
 		/// </summary>
-		private readonly Icon _enabledIcon = new Icon(
-			Properties.Resources.enabled, new System.Drawing.Size(256, 256)
-		);
+		private Icon _enabledIcon;
 
 		/// <summary>
 		/// Application's system tray icon.
@@ -83,6 +80,12 @@ namespace Espresso.WPF
 			SpawnTrayIcon();
 		}
 
+		private Icon ConvertToIcon(byte[] bytes)
+		{
+			using MemoryStream ms = new MemoryStream(bytes);
+			return new Icon(ms);
+		}
+
 		/// <summary>
 		/// Configures tray icon's context menu options.
 		/// </summary>
@@ -104,6 +107,8 @@ namespace Espresso.WPF
 		/// </summary>
 		private void SpawnTrayIcon()
 		{
+			_disabledIcon = new Icon(ConvertToIcon(Properties.Resources.disabled), new System.Drawing.Size(256, 256));
+			_enabledIcon = new Icon(ConvertToIcon(Properties.Resources.enabled), new System.Drawing.Size(256, 256));
 			_trayIcon.Icon = _disabledIcon;
 			_trayIcon.ContextMenu = _trayContextMenu;
 			_trayIcon.MouseDown += (sender, e) => FilterMouseInput(sender, e);
@@ -134,7 +139,7 @@ namespace Espresso.WPF
 					_trayIcon.Icon = _disabledIcon;
 					_toggleItem.Text = "Enable";
 				}
-			} 
+			}
 			else
 			{
 				if (App.coffee.Activate())

@@ -9,6 +9,8 @@
     <UseWPF>true</UseWPF>
 	<UseWindowsForms>true</UseWindowsForms>
 	<ApplicationIcon>Resources\main.ico</ApplicationIcon>
+	<Version>0.3.0</Version>
+	<Authors>Lorenzo Billi</Authors>
   </PropertyGroup>
 
   <ItemGroup>

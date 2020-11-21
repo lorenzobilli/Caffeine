@@ -56,17 +56,17 @@ namespace Espresso
 		/// <summary>
 		/// System tray icon's context menu.
 		/// </summary>
-		private ContextMenu _trayContextMenu = new ContextMenu();
+		private ContextMenuStrip _trayContextMenu = new ContextMenuStrip();
 
 		/// <summary>
 		/// Context menu's item handling enable and disable states.
 		/// </summary>
-		private MenuItem _toggleItem = new MenuItem();
+		private ToolStripMenuItem _toggleItem = new ToolStripMenuItem();
 
 		/// <summary>
 		/// Context menu's item handling application exit.
 		/// </summary>
-		private MenuItem _exitItem = new MenuItem();
+		private ToolStripMenuItem _exitItem = new ToolStripMenuItem();
 
 		/// <summary>
 		/// Hides the main application's window and initializes the application's system tray icon.
@@ -91,15 +91,16 @@ namespace Espresso
 		/// </summary>
 		private void ConfigureContextMenu()
 		{
-			_toggleItem.Index = 0;
+			//_toggleItem.Index = 0;
 			_toggleItem.Text = "Enable";
 			_toggleItem.Click += (sender, e) => SetState();
 
-			_exitItem.Index = 1;
+			//_exitItem.Index = 1;
 			_exitItem.Text = "Exit";
 			_exitItem.Click += (sender, e) => CloseApp();
 
-			_trayContextMenu.MenuItems.AddRange(new MenuItem[] { _toggleItem, _exitItem });
+			//_trayContextMenu.MenuItems.AddRange(new MenuItem[] { _toggleItem, _exitItem });
+			_trayContextMenu.Items.AddRange(new ToolStripItem[] { _toggleItem, _exitItem });
 		}
 
 		/// <summary>
@@ -110,7 +111,7 @@ namespace Espresso
 			_disabledIcon = new Icon(ConvertToIcon(Properties.Resources.disabled), new System.Drawing.Size(256, 256));
 			_enabledIcon = new Icon(ConvertToIcon(Properties.Resources.enabled), new System.Drawing.Size(256, 256));
 			_trayIcon.Icon = _disabledIcon;
-			_trayIcon.ContextMenu = _trayContextMenu;
+			_trayIcon.ContextMenuStrip = _trayContextMenu;
 			_trayIcon.MouseDown += (sender, e) => FilterMouseInput(sender, e);
 			_trayIcon.Visible = true;
 		}

@@ -36,7 +36,7 @@ namespace Espresso
 	/// Wraps all code used to keep the computer waken up.
 	/// </summary>
 	public class Coffee
-    {
+	{
 		/// <summary>
 		/// Tells if the sleeping prevention system is active.
 		/// </summary>
@@ -81,7 +81,7 @@ namespace Espresso
 			IsActive = false;
 			return true;
 		}
-    }
+	}
 
 	/// <summary>
 	/// Internal wrapper class exposing native Windows' methods used for preventing sleep.

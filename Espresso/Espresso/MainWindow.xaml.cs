@@ -22,7 +22,7 @@
  *	IN THE SOFTWARE.
  *	
  *	
- *	Espresso/Espresso.WPF/MainWindow.xaml.cs
+ *	Espresso/Espresso/MainWindow.xaml.cs
  *	
  */
 
@@ -41,32 +41,32 @@ namespace Espresso
 		/// <summary>
 		/// Icon used by the system tray icon to tell the user that the application is in the disabled state.
 		/// </summary>
-		private Icon _disabledIcon;
+		private Icon? _disabledIcon;
 
 		/// <summary>
 		/// Icon used by the system tray icon to tell the user that the application is in the enabled state.
 		/// </summary>
-		private Icon _enabledIcon;
+		private Icon? _enabledIcon;
 
 		/// <summary>
 		/// Application's system tray icon.
 		/// </summary>
-		private NotifyIcon _trayIcon = new NotifyIcon();
+		private readonly NotifyIcon _trayIcon = new NotifyIcon();
 
 		/// <summary>
 		/// System tray icon's context menu.
 		/// </summary>
-		private ContextMenuStrip _trayContextMenu = new ContextMenuStrip();
+		private readonly ContextMenuStrip _trayContextMenu = new ContextMenuStrip();
 
 		/// <summary>
 		/// Context menu's item handling enable and disable states.
 		/// </summary>
-		private ToolStripMenuItem _toggleItem = new ToolStripMenuItem();
+		private readonly ToolStripMenuItem _toggleItem = new ToolStripMenuItem();
 
 		/// <summary>
 		/// Context menu's item handling application exit.
 		/// </summary>
-		private ToolStripMenuItem _exitItem = new ToolStripMenuItem();
+		private readonly ToolStripMenuItem _exitItem = new ToolStripMenuItem();
 
 		/// <summary>
 		/// Hides the main application's window and initializes the application's system tray icon.
@@ -80,7 +80,7 @@ namespace Espresso
 			SpawnTrayIcon();
 		}
 
-		private Icon ConvertToIcon(byte[] bytes)
+		private static Icon ConvertToIcon(byte[] bytes)
 		{
 			using MemoryStream ms = new MemoryStream(bytes);
 			return new Icon(ms);
@@ -91,15 +91,12 @@ namespace Espresso
 		/// </summary>
 		private void ConfigureContextMenu()
 		{
-			//_toggleItem.Index = 0;
 			_toggleItem.Text = "Enable";
 			_toggleItem.Click += (sender, e) => SetState();
 
-			//_exitItem.Index = 1;
 			_exitItem.Text = "Exit";
 			_exitItem.Click += (sender, e) => CloseApp();
 
-			//_trayContextMenu.MenuItems.AddRange(new MenuItem[] { _toggleItem, _exitItem });
 			_trayContextMenu.Items.AddRange(new ToolStripItem[] { _toggleItem, _exitItem });
 		}
 
@@ -120,7 +117,7 @@ namespace Espresso
 		/// Filters user mouse input, distinguishing between left and right click.
 		/// SetState() must be called only with a left mouse click.
 		/// </summary>
-		private void FilterMouseInput(object sender, MouseEventArgs e)
+		private void FilterMouseInput(object? sender, MouseEventArgs e)
 		{
 			if (e.Button.Equals(MouseButtons.Left))
 			{

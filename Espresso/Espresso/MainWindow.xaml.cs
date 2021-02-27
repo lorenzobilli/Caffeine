@@ -51,22 +51,22 @@ namespace Espresso
 		/// <summary>
 		/// Application's system tray icon.
 		/// </summary>
-		private readonly NotifyIcon _trayIcon = new NotifyIcon();
+		private readonly NotifyIcon _trayIcon = new();
 
 		/// <summary>
 		/// System tray icon's context menu.
 		/// </summary>
-		private readonly ContextMenuStrip _trayContextMenu = new ContextMenuStrip();
+		private readonly ContextMenuStrip _trayContextMenu = new();
 
 		/// <summary>
 		/// Context menu's item handling enable and disable states.
 		/// </summary>
-		private readonly ToolStripMenuItem _toggleItem = new ToolStripMenuItem();
+		private readonly ToolStripMenuItem _toggleItem = new();
 
 		/// <summary>
 		/// Context menu's item handling application exit.
 		/// </summary>
-		private readonly ToolStripMenuItem _exitItem = new ToolStripMenuItem();
+		private readonly ToolStripMenuItem _exitItem = new();
 
 		/// <summary>
 		/// Hides the main application's window and initializes the application's system tray icon.
@@ -82,7 +82,7 @@ namespace Espresso
 
 		private static Icon ConvertToIcon(byte[] bytes)
 		{
-			using MemoryStream ms = new MemoryStream(bytes);
+			using MemoryStream ms = new(bytes);
 			return new Icon(ms);
 		}
 

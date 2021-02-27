@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace Espresso
 {
-	public partial class Form1 : Form
+	public partial class Cup : Form
 	{
-		public Form1()
+		public Cup()
 		{
 			InitializeComponent();
 		}
-
 	}
 }

@@ -44,12 +44,14 @@ namespace Espresso
 		/// <summary>
 		/// Icon used when the application is in the disabled state.
 		/// </summary>
-		private readonly Icon disabledIcon = new(Icons.disabled, TRAY_ICON_SIZE);
+		private readonly Icon disabledIcon = new(Properties.Resources.disabled, TRAY_ICON_SIZE);
 
 		/// <summary>
 		/// Icon used when the application is in the enabled state.
 		/// </summary>
-		private readonly Icon enabledIcon = new(Icons.enabled, TRAY_ICON_SIZE);
+		private readonly Icon enabledIcon = new(Properties.Resources.enabled, TRAY_ICON_SIZE);
+
+		private Settings settings;
 
 		/// <summary>
 		/// Spawns the tray icon and associates the main events to the corresponding actions.
@@ -64,7 +66,18 @@ namespace Espresso
 			toggleMenuItem.Text = "Enable";
 			toggleMenuItem.Click += (sender, e) => SetState();
 
+			settingsMenuItem.Click += (sender, e) =>
+			{
+				settings = new();
+				settings.Show();
+			};
+
 			exitMenuItem.Click += (sender, e) => Exit();
+
+			if (Properties.Settings.Default.EnableOnAppStartup)
+			{
+				SetState();
+			}
 		}
 
 		/// <summary>

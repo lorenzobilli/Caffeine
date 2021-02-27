@@ -23,6 +23,7 @@ namespace Espresso
 			InitializeComponent();
 
 			trayIcon.Icon = disabledIcon;
+			toggleMenuItem.Text = "Enable";
 		}
 	}
 }

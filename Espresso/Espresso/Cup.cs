@@ -44,12 +44,12 @@ namespace Espresso
 		/// <summary>
 		/// Icon used when the application is in the disabled state.
 		/// </summary>
-		private readonly Icon disabledIcon = new(Icons.disabled, TRAY_ICON_SIZE);
+		private readonly Icon disabledIcon = new(Properties.Resources.disabled, TRAY_ICON_SIZE);
 
 		/// <summary>
 		/// Icon used when the application is in the enabled state.
 		/// </summary>
-		private readonly Icon enabledIcon = new(Icons.enabled, TRAY_ICON_SIZE);
+		private readonly Icon enabledIcon = new(Properties.Resources.enabled, TRAY_ICON_SIZE);
 
 		/// <summary>
 		/// Spawns the tray icon and associates the main events to the corresponding actions.

@@ -26,6 +26,9 @@ namespace Espresso
 			trayIcon.MouseDown += (sender, e) => FilterMouseInput(sender, e);
 
 			toggleMenuItem.Text = "Enable";
+			toggleMenuItem.Click += (sender, e) => SetState();
+
+			exitMenuItem.Click += (sender, e) => Exit();
 		}
 
 		/// <summary>
@@ -61,6 +64,22 @@ namespace Espresso
 			{
 				SetState();
 			}
+		}
+
+		/// <summary>
+		/// Makes sure that the application is set to disabled states, then closes the application.
+		/// </summary>
+		private void Exit()
+		{
+			if (Coffee.IsActive)
+			{
+				Coffee.Deactivate();
+			}
+
+			trayIcon.Visible = false;
+			trayIcon.Dispose();
+			Close();
+			Application.Exit();
 		}
 	}
 }

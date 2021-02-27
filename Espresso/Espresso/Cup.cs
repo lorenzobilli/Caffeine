@@ -73,6 +73,11 @@ namespace Espresso
 			};
 
 			exitMenuItem.Click += (sender, e) => Exit();
+
+			if (Properties.Settings.Default.EnableOnAppStartup)
+			{
+				SetState();
+			}
 		}
 
 		/// <summary>

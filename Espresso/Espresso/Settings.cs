@@ -15,6 +15,15 @@ namespace Espresso
 		public Settings()
 		{
 			InitializeComponent();
+
+			checkBoxEnableOnAppStartup.Checked = Properties.Settings.Default.EnableOnAppStartup;
+			checkBoxEnableOnAppStartup.CheckedChanged += (sender, e) => HandleEnableOnStartupPreference();
+		}
+
+		private void HandleEnableOnStartupPreference()
+		{
+			Properties.Settings.Default.EnableOnAppStartup = checkBoxEnableOnAppStartup.Checked;
+			Properties.Settings.Default.Save();
 		}
 	}
 }

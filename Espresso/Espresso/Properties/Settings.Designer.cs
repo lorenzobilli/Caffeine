@@ -22,5 +22,17 @@ namespace Espresso.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EnableOnAppStartup {
+            get {
+                return ((bool)(this["EnableOnAppStartup"]));
+            }
+            set {
+                this["EnableOnAppStartup"] = value;
+            }
+        }
     }
 }

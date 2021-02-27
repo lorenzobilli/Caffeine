@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.352
+VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Espresso", "Espresso\Espresso.csproj", "{276192C5-017A-456A-9C76-CD20EE8ADCDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Espresso", "Espresso\Espresso.csproj", "{0966DF3A-ADDB-455D-8BB8-57C9A1D6706E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{276192C5-017A-456A-9C76-CD20EE8ADCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{276192C5-017A-456A-9C76-CD20EE8ADCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{276192C5-017A-456A-9C76-CD20EE8ADCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{276192C5-017A-456A-9C76-CD20EE8ADCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0966DF3A-ADDB-455D-8BB8-57C9A1D6706E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0966DF3A-ADDB-455D-8BB8-57C9A1D6706E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0966DF3A-ADDB-455D-8BB8-57C9A1D6706E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0966DF3A-ADDB-455D-8BB8-57C9A1D6706E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4E7CC788-4F18-4A88-B43A-D34A11A528AF}
+		SolutionGuid = {3E32FEEF-A913-43BC-81F1-0315D65A6633}
 	EndGlobalSection
 EndGlobal

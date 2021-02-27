@@ -5,7 +5,7 @@
  *	
  *	The MIT License
  *	
- *	Copyright (c) 2018-2019 Lorenzo Billi
+ *	Copyright (c) 2018-2021 Lorenzo Billi
  *	
  *	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  *	documentation files (the "Software"), to deal in the Software without restriction, including without limitation
@@ -35,18 +35,18 @@ namespace Espresso
 	/// <summary>
 	/// Wraps all code used to keep the computer waken up.
 	/// </summary>
-	public class Coffee
+	public static class Coffee
 	{
 		/// <summary>
 		/// Tells if the sleeping prevention system is active.
 		/// </summary>
-		public bool IsActive { get; private set; }
+		public static bool IsActive { get; private set; }
 
 		/// <summary>
 		/// Activates the sleeping prevention system.
 		/// </summary>
 		/// <returns>True if the system is now correctly configured to avoid sleeping, false if not.</returns>
-		public bool Activate()
+		public static bool Activate()
 		{
 			var previousExecutionState = Caffeine.SetThreadExecutionState(
 				Caffeine.EXECUTION_STATE.ES_CONTINUOUS |
@@ -68,7 +68,7 @@ namespace Espresso
 		/// Deactivates the sleeping prevention system.
 		/// </summary>
 		/// <returns>True if the system's default behaviour has been correctly restored, false if not.</returns>
-		public bool Deactivate()
+		public static bool Deactivate()
 		{
 			var previousExecutionState = Caffeine.SetThreadExecutionState(Caffeine.EXECUTION_STATE.ES_CONTINUOUS);
 

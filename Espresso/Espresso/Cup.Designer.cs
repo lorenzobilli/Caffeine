@@ -75,6 +75,7 @@ namespace Espresso
 			this.trayContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.toggleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.trayContextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -88,20 +89,27 @@ namespace Espresso
 			this.trayContextMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
 			this.trayContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toggleMenuItem,
+            this.settingsMenuItem,
             this.exitMenuItem});
 			this.trayContextMenu.Name = "trayContextMenu";
-			this.trayContextMenu.Size = new System.Drawing.Size(126, 80);
+			this.trayContextMenu.Size = new System.Drawing.Size(175, 118);
 			// 
 			// toggleMenuItem
 			// 
 			this.toggleMenuItem.Name = "toggleMenuItem";
-			this.toggleMenuItem.Size = new System.Drawing.Size(125, 38);
+			this.toggleMenuItem.Size = new System.Drawing.Size(174, 38);
 			// 
 			// exitMenuItem
 			// 
 			this.exitMenuItem.Name = "exitMenuItem";
-			this.exitMenuItem.Size = new System.Drawing.Size(125, 38);
+			this.exitMenuItem.Size = new System.Drawing.Size(174, 38);
 			this.exitMenuItem.Text = "Exit";
+			// 
+			// settingsMenuItem
+			// 
+			this.settingsMenuItem.Name = "settingsMenuItem";
+			this.settingsMenuItem.Size = new System.Drawing.Size(174, 38);
+			this.settingsMenuItem.Text = "Settings";
 			// 
 			// Cup
 			// 
@@ -121,5 +129,6 @@ namespace Espresso
 		private System.Windows.Forms.ContextMenuStrip trayContextMenu;
 		private System.Windows.Forms.ToolStripMenuItem toggleMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem settingsMenuItem;
 	}
 }

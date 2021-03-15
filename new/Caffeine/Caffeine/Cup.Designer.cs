@@ -74,8 +74,8 @@ namespace Caffeine
 			this.trayIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.trayContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.toggleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.trayContextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -99,17 +99,17 @@ namespace Caffeine
 			this.toggleMenuItem.Name = "toggleMenuItem";
 			this.toggleMenuItem.Size = new System.Drawing.Size(174, 38);
 			// 
-			// exitMenuItem
-			// 
-			this.exitMenuItem.Name = "exitMenuItem";
-			this.exitMenuItem.Size = new System.Drawing.Size(174, 38);
-			this.exitMenuItem.Text = "Exit";
-			// 
 			// settingsMenuItem
 			// 
 			this.settingsMenuItem.Name = "settingsMenuItem";
 			this.settingsMenuItem.Size = new System.Drawing.Size(174, 38);
 			this.settingsMenuItem.Text = "Settings";
+			// 
+			// exitMenuItem
+			// 
+			this.exitMenuItem.Name = "exitMenuItem";
+			this.exitMenuItem.Size = new System.Drawing.Size(174, 38);
+			this.exitMenuItem.Text = "Exit";
 			// 
 			// Cup
 			// 

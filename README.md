@@ -1,3 +1,3 @@
-# Espresso #
+# Caffeine
 
-## Prevents Windows from going to sleep ##
+## Prevents Windows from going to sleep

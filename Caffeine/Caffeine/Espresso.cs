@@ -1,5 +1,5 @@
 ﻿/*
- *	Project: Espresso
+ *	Project: Caffeine
  *	Author(s): Lorenzo Billi
  *	
  *	
@@ -22,7 +22,7 @@
  *	IN THE SOFTWARE.
  *	
  *	
- *	Espresso/Espresso/Coffee.cs
+ *	Caffeine/Caffeine/Espresso.cs
  *	
  */
 
@@ -30,12 +30,12 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace Espresso
+namespace Caffeine
 {
 	/// <summary>
 	/// Wraps all code used to keep the computer waken up.
 	/// </summary>
-	public static class Coffee
+	public static class Espresso
 	{
 		/// <summary>
 		/// Tells if the sleeping prevention system is active.
@@ -48,10 +48,10 @@ namespace Espresso
 		/// <returns>True if the system is now correctly configured to avoid sleeping, false if not.</returns>
 		public static bool Activate()
 		{
-			var previousExecutionState = Caffeine.SetThreadExecutionState(
-				Caffeine.EXECUTION_STATE.ES_CONTINUOUS |
-				Caffeine.EXECUTION_STATE.ES_DISPLAY_REQUIRED |
-				Caffeine.EXECUTION_STATE.ES_SYSTEM_REQUIRED
+			var previousExecutionState = Coffee.SetThreadExecutionState(
+				Coffee.EXECUTION_STATE.ES_CONTINUOUS |
+				Coffee.EXECUTION_STATE.ES_DISPLAY_REQUIRED |
+				Coffee.EXECUTION_STATE.ES_SYSTEM_REQUIRED
 			);
 
 			if (previousExecutionState == 0)
@@ -70,7 +70,7 @@ namespace Espresso
 		/// <returns>True if the system's default behaviour has been correctly restored, false if not.</returns>
 		public static bool Deactivate()
 		{
-			var previousExecutionState = Caffeine.SetThreadExecutionState(Caffeine.EXECUTION_STATE.ES_CONTINUOUS);
+			var previousExecutionState = Coffee.SetThreadExecutionState(Coffee.EXECUTION_STATE.ES_CONTINUOUS);
 
 			if (previousExecutionState == 0)
 			{
@@ -86,7 +86,7 @@ namespace Espresso
 	/// <summary>
 	/// Internal wrapper class exposing native Windows' methods used for preventing sleep.
 	/// </summary>
-	internal static class Caffeine
+	internal static class Coffee
 	{
 		/// <summary>
 		/// Possible <c>EXECUTION_STATE</c> flags that can be passed to and returned by

@@ -1,5 +1,5 @@
 ﻿/*
- *	Project: Espresso
+ *	Project: Caffeine
  *	Author(s): Lorenzo Billi
  *	
  *	
@@ -22,14 +22,14 @@
  *	IN THE SOFTWARE.
  *	
  *	
- *	Espresso/Espresso/Cup.cs
+ *	Caffeine/Caffeine/Cup.cs
  *	
  */
 
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Espresso
+namespace Caffeine
 {
 	/// <summary>
 	/// Main form class of the application, representing the tray icon and all associated items.
@@ -85,9 +85,9 @@ namespace Espresso
 		/// </summary>
 		private void SetState()
 		{
-			if (Coffee.IsActive)
+			if (Espresso.IsActive)
 			{
-				if (Coffee.Deactivate())
+				if (Espresso.Deactivate())
 				{
 					trayIcon.Icon = disabledIcon;
 					toggleMenuItem.Text = "Enable";
@@ -95,7 +95,7 @@ namespace Espresso
 			}
 			else
 			{
-				if (Coffee.Activate())
+				if (Espresso.Activate())
 				{
 					trayIcon.Icon = enabledIcon;
 					toggleMenuItem.Text = "Disable";
@@ -120,9 +120,9 @@ namespace Espresso
 		/// </summary>
 		private void Exit()
 		{
-			if (Coffee.IsActive)
+			if (Espresso.IsActive)
 			{
-				Coffee.Deactivate();
+				Espresso.Deactivate();
 			}
 
 			trayIcon.Visible = false;

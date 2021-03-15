@@ -1,11 +1,11 @@
 ﻿/*
- *	Project: Espresso
+ *	Project: Caffeine
  *	Author(s): Lorenzo Billi
  *	
  *	
  *	The MIT License
  *	
- *	Copyright (c) 2018-2019 Lorenzo Billi
+ *	Copyright (c) 2018-2021 Lorenzo Billi
  *	
  *	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  *	documentation files (the "Software"), to deal in the Software without restriction, including without limitation
@@ -22,28 +22,28 @@
  *	IN THE SOFTWARE.
  *	
  *	
- *	Espresso/Espresso/Espresso.cs
+ *	Caffeine/Caffeine/Settings.cs
  *	
  */
 
 using System.Windows.Forms;
 
-namespace Espresso
+namespace Caffeine
 {
-	/// <summary>
-	/// Application's main class.
-	/// </summary>
-	static class Espresso
+	public partial class Settings : Form
 	{
-		/// <summary>
-		/// Application entrypoint.
-		/// </summary>
-		static void Main()
+		public Settings()
 		{
-			Application.SetHighDpiMode(HighDpiMode.SystemAware);
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Cup());
+			InitializeComponent();
+
+			checkBoxEnableOnAppStartup.Checked = Properties.Settings.Default.EnableOnAppStartup;
+			checkBoxEnableOnAppStartup.CheckedChanged += (sender, e) => HandleEnableOnStartupPreference();
+		}
+
+		private void HandleEnableOnStartupPreference()
+		{
+			Properties.Settings.Default.EnableOnAppStartup = checkBoxEnableOnAppStartup.Checked;
+			Properties.Settings.Default.Save();
 		}
 	}
 }
